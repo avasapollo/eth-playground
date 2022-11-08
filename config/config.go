@@ -6,6 +6,7 @@ import (
 
 type Config struct {
 	NetworkURL string `envconfig:"NETWORK_URL"`
+	MyAccount  string `envconfig:"MY_ACCOUNT"`
 }
 
 func Get() *Config {
