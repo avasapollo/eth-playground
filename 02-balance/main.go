@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/avasapollo/eth-playground/config"
-	"github.com/avasapollo/eth-playground/tools"
+	"github.com/avasapollo/eth-playground/tools/convert"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/sirupsen/logrus"
@@ -29,6 +29,6 @@ func main() {
 	}
 	// 1 ether = 10^18 wei
 
-	valueEth, _ := tools.FromWei(tools.Ether, balance)
+	valueEth, _ := convert.FromWei(convert.Ether, balance)
 	lgr.WithField("balance", valueEth).Info("balance")
 }

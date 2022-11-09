@@ -1,4 +1,4 @@
-package tools
+package convert
 
 import (
 	"errors"
@@ -6,9 +6,11 @@ import (
 	"math/big"
 )
 
-const Ether = "ether"
+type Unit string
 
-func FromWei(unit string, val *big.Int) (*big.Float, error) {
+const Ether Unit = "ether"
+
+func FromWei(unit Unit, val *big.Int) (*big.Float, error) {
 	if unit != Ether {
 		return nil, errors.New("unit is not allowed")
 	}
@@ -17,4 +19,3 @@ func FromWei(unit string, val *big.Int) (*big.Float, error) {
 	fBalance.SetString(val.String())
 	return new(big.Float).Quo(fBalance, big.NewFloat(math.Pow10(18))), nil
 }
-
