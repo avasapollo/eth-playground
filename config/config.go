@@ -7,6 +7,9 @@ import (
 type Config struct {
 	NetworkURL string `envconfig:"NETWORK_URL"`
 	MyAccount  string `envconfig:"MY_ACCOUNT"`
+
+	KeyStoreAccountPassword string `envconfig:"KEY_STORE_ACCOUNT_PASSWORD"`
+	KeyStorePath            string `envconfig:"KEY_STORE_PATH"`
 }
 
 func Get() *Config {
