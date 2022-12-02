@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	lgr := logrus.New().WithField("app", "06-recurring")
+	lgr := logrus.New().WithField("app", "05-recurring")
 	c := config.Get()
 
 	// generate keystore
@@ -87,6 +87,7 @@ func main() {
 
 	// generate the private key from the raw private key that is inside the MY_ACCOUNT_PRIVATE_KEY
 	prKey := convert.ToPrivateKey(c.MyAccountPrivateKey)
+
 	tr, err := types.SignNewTx(prKey, types.NewEIP155Signer(chanID), txData)
 	if err != nil {
 		lgr.WithError(err).Fatal("can't sign the transaction")

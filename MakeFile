@@ -1,0 +1,6 @@
+
+build-contract:
+	solc --bin --abi contract/todo.sol -o build
+
+abigen-contract:
+	abigen --bin=build/Todo.bin --abi=build/Todo.abi --pkg=todo --out=gen/todo.go
