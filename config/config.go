@@ -9,6 +9,7 @@ type Config struct {
 	MyAccount               string `envconfig:"MY_ACCOUNT"`
 	MyAccountPrivateKey     string `envconfig:"MY_ACCOUNT_PRIVATE_KEY"`
 	ContractOwner           string `envconfig:"CONTRACT_OWNER"`
+	ContractAddress         string `envconfig:"CONTRACT_ADDRESS"`
 	KeyStoreAccountPassword string `envconfig:"KEY_STORE_ACCOUNT_PASSWORD"`
 	KeyStorePath            string `envconfig:"KEY_STORE_PATH"`
 }
