@@ -1,7 +1,8 @@
-ETH-Playground
-This is repository is to play with the Ethereum network and blockchain concepts.
+#  ETH-Playground
 
-ENV configuration
+I am playing to learn the Ethereum and blockchain concepts.
+
+**ENV configuration**
 ````
 NETWORK_URL={{test network url}}
 MY_ACCOUNT={{public address of a test account}} 
