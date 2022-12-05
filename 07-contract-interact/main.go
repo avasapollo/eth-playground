@@ -26,7 +26,7 @@ func main() {
 		lgr.WithError(err).Fatal("can't get the contract owner")
 	}
 
-	key, err := keystore.DecryptKey(b, "password")
+	key, err := keystore.DecryptKey(b, c.KeyStoreAccountPassword)
 	if err != nil {
 		lgr.WithError(err).Fatal("can't decrypt contract key")
 	}

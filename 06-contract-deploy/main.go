@@ -32,7 +32,7 @@ func main() {
 		lgr.WithError(err).Fatal("can't get wallet json file")
 	}
 
-	key, err := keystore.DecryptKey(b, "password")
+	key, err := keystore.DecryptKey(b, c.KeyStoreAccountPassword)
 	if err != nil {
 		lgr.WithError(err).Fatal("can't decrypt the key")
 	}
