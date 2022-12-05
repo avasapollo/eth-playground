@@ -16,8 +16,10 @@ import (
 )
 
 func main() {
-	lgr := logrus.New().WithField("app", "06-contract-deploy")
 	c := config.Get()
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "06-contract-deploy",
+	})
 
 	ctx := context.Background()
 	client, err := ethclient.DialContext(ctx, c.NetworkURL)

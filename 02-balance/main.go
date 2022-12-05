@@ -13,7 +13,9 @@ import (
 func main() {
 	c := config.Get()
 
-	lgr := logrus.New()
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "02-balance",
+	})
 
 	client, err := ethclient.DialContext(context.Background(), c.NetworkURL)
 	if err != nil {

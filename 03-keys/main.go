@@ -7,7 +7,10 @@ import (
 )
 
 func main() {
-	lgr := logrus.New()
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "03-keys",
+	})
+
 	// generate private key
 	pvKey, err := crypto.GenerateKey()
 	if err != nil {

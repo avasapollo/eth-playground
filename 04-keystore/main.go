@@ -13,7 +13,9 @@ import (
 
 func main() {
 	c := config.Get()
-	lgr := logrus.New()
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "04-keystore",
+	})
 
 	// generate keystore
 	key := keystore.NewKeyStore(c.KeyStorePath, keystore.StandardScryptN, keystore.StandardScryptP)

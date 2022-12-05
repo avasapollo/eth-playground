@@ -16,7 +16,10 @@ import (
 
 func main() {
 	c := config.Get()
-	lgr := logrus.New().WithFields(logrus.Fields{})
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "07-contract-interact",
+	})
+
 	ctx := context.Background()
 	b, err := os.ReadFile(c.ContractOwner)
 	if err != nil {

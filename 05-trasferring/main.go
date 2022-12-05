@@ -14,8 +14,10 @@ import (
 )
 
 func main() {
-	lgr := logrus.New().WithField("app", "05-recurring")
 	c := config.Get()
+	lgr := logrus.New().WithFields(logrus.Fields{
+		"app": "05-transferring",
+	})
 
 	// generate keystore
 	keyStorage := keystore.NewKeyStore(c.KeyStorePath, keystore.StandardScryptN, keystore.StandardScryptP)
